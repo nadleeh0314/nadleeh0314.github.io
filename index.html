@@ -366,7 +366,7 @@
         
           
             <h2 id="spi（Service-Provider-Interface）学习"><a href="#spi（Service-Provider-Interface）学习" class="headerlink" title="spi（Service Provider Interface）学习"></a>spi（Service Provider Interface）学习</h2><h4 id="学习背景"><a href="#学习背景" class="headerlink" title="学习背景"></a>学习背景</h4><blockquote>
-<p>这段时间在看dubbo借口源代码的时候，看到一个类<strong><em>ExtensionLoader</em></strong>，这个类可以使用类似<code>ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()</code>的方式获取对应接口<strong><em>Protocol</em></strong>的实现类，在学习了这个类之后，发现其实现理念是基于java的spi(Service Provider Interface)。</p>
+<p>这段时间在看dubbo接口源代码的时候，看到一个类<strong><em>ExtensionLoader</em></strong>，这个类可以使用类似<code>ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()</code>的方式获取对应接口<strong><em>Protocol</em></strong>的实现类，在学习了这个类之后，发现其实现理念是基于java的spi(Service Provider Interface)。</p>
 </blockquote>
 <h4 id="spi介绍"><a href="#spi介绍" class="headerlink" title="spi介绍"></a>spi介绍</h4><p>spi其实是一种生产厂家提供给使用者底层扩展的一种机制，而其实现基础的jdk提供的。其实比如有时候一些第三放提供的jar包，在log实现，jdbc驱动选择方面有可能有一个默认的实现，但是更多的是可以让用户去选择。而这些又不方便使用修改代码的方式去jar包中修改，因此，jdk提供了一种基于文件修改选择实现类的方式，其实现的原理也很简单，就是jdk提供的一个工具类———<strong><em>ServiceLoader</em></strong>。</p>
 <h4 id="ServiceLoader类源码分析"><a href="#ServiceLoader类源码分析" class="headerlink" title="ServiceLoader类源码分析"></a>ServiceLoader类源码分析</h4><p><strong><em>ServiceLoader</em></strong>类的入口是两个静态方法</p>
@@ -598,7 +598,7 @@ private Iterator&lt;String&gt; parse(Class&lt;?&gt; service, URL u)
     return names.iterator();
 }
 </code></pre><p>在配置文件中一行就代表配置一个实现类，然后每行只需要记载实现类的类路径，比如说com.learning.spring.App即可，且提供#后的内容作为注释。</p>
-<p>####实例<br>在最刚开始学习jdbc的时候，我们需要创建jdbc连接的时候都需要写一个<code>Class.forName(xxxDriver.class);</code>，然后再调用<code>DriverManager.getConnection()</code>来获取连接，其实看过源码的人就知道，数据库提供的驱动类xxxDriver中都有一段静态代码段，用于向DriverManager注册自身，而<code>Class.forName(xxxDriver.class);</code>就是为了调用这段静态代码段。那么在jdbc4.0之后，jdk就还提供了spi的方式来进行注册对应的驱动，也就是不需要再手动调用<code>Class.forName(xxxDriver.class);</code>了，可以直接使用<code>DriverManager.getConnection()</code>来获取连接。其原理也很简单，其实就在于<strong><em>DriverManager</em></strong>也新增了一段静态代码段。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>在最刚开始学习jdbc的时候，我们需要创建jdbc连接的时候都需要写一个<code>Class.forName(xxxDriver.class);</code>，然后再调用<code>DriverManager.getConnection()</code>来获取连接，其实看过源码的人就知道，数据库提供的驱动类xxxDriver中都有一段静态代码段，用于向DriverManager注册自身，而<code>Class.forName(xxxDriver.class);</code>就是为了调用这段静态代码段。那么在jdbc4.0之后，jdk就还提供了spi的方式来进行注册对应的驱动，也就是不需要再手动调用<code>Class.forName(xxxDriver.class);</code>了，可以直接使用<code>DriverManager.getConnection()</code>来获取连接。其原理也很简单，其实就在于<strong><em>DriverManager</em></strong>也新增了一段静态代码段。</p>
 <pre><code>/**
  * Load the initial JDBC drivers by checking the System property
  * jdbc.properties and then use the {@code ServiceLoader} mechanism
@@ -671,7 +671,7 @@ static {
     }
 }
 </code></pre><p>其实从上面可以看出来，jdbc4.0不仅仅提供了spi方式注册驱动，还提供了运行属性配置的方式来注册驱动。</p>
-<p>####模式反思<br>看了spi的代码，还是有很大的启发。一个是实现Iterator的方式用来代替在类中定义list去递归list的常规方式。这样的方式不仅可以使用foreach的方式，方便使用者灵活使用，还可以隐藏list内容，仅仅对外提供iterator对应的方法，实现内部包装。另一个就是多学习了一种懒加载的方式，使用iterator迭代的时候再去加载。其实关键就是对Iterator接口的活用让我获益匪浅。jdk提供的spi扩展方式相对来说比较简单，下篇文章将讲解下dubbo接口<strong><em>ExtensionLoader</em></strong>提供的spi加载模式以及它的优点。</p>
+<h4 id="模式反思"><a href="#模式反思" class="headerlink" title="模式反思"></a>模式反思</h4><p>看了spi的代码，还是有很大的启发。一个是实现Iterator的方式用来代替在类中定义list去递归list的常规方式。这样的方式不仅可以使用foreach的方式，方便使用者灵活使用，还可以隐藏list内容，仅仅对外提供iterator对应的方法，实现内部包装。另一个就是多学习了一种懒加载的方式，使用iterator迭代的时候再去加载。其实关键就是对Iterator接口的活用让我获益匪浅。jdk提供的spi扩展方式相对来说比较简单，下篇文章将讲解下dubbo接口<strong><em>ExtensionLoader</em></strong>提供的spi加载模式以及它的优点。</p>
 
           
         
