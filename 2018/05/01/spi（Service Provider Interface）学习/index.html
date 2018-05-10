@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Nadleeh&#39;s BLOG">
 <meta property="og:description" content="spi（Service Provider Interface）学习学习背景 这段时间在看dubbo接口源代码的时候，看到一个类ExtensionLoader，这个类可以使用类似ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()的方式获取对应接口Protocol的实现类，在学习了这个类之后，发现其实现理念">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T15:43:59.717Z">
+<meta property="og:updated_time" content="2018-05-10T15:00:16.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spi（Service Provider Interface）学习">
 <meta name="twitter:description" content="spi（Service Provider Interface）学习学习背景 这段时间在看dubbo接口源代码的时候，看到一个类ExtensionLoader，这个类可以使用类似ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()的方式获取对应接口Protocol的实现类，在学习了这个类之后，发现其实现理念">
@@ -366,6 +366,7 @@
         <h2 id="spi（Service-Provider-Interface）学习"><a href="#spi（Service-Provider-Interface）学习" class="headerlink" title="spi（Service Provider Interface）学习"></a>spi（Service Provider Interface）学习</h2><h4 id="学习背景"><a href="#学习背景" class="headerlink" title="学习背景"></a>学习背景</h4><blockquote>
 <p>这段时间在看dubbo接口源代码的时候，看到一个类<strong><em>ExtensionLoader</em></strong>，这个类可以使用类似<code>ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()</code>的方式获取对应接口<strong><em>Protocol</em></strong>的实现类，在学习了这个类之后，发现其实现理念是基于java的spi(Service Provider Interface)。</p>
 </blockquote>
+<a id="more"></a>
 <h4 id="spi介绍"><a href="#spi介绍" class="headerlink" title="spi介绍"></a>spi介绍</h4><p>spi其实是一种生产厂家提供给使用者底层扩展的一种机制，而其实现基础的jdk提供的。其实比如有时候一些第三放提供的jar包，在log实现，jdbc驱动选择方面有可能有一个默认的实现，但是更多的是可以让用户去选择。而这些又不方便使用修改代码的方式去jar包中修改，因此，jdk提供了一种基于文件修改选择实现类的方式，其实现的原理也很简单，就是jdk提供的一个工具类———<strong><em>ServiceLoader</em></strong>。</p>
 <h4 id="ServiceLoader类源码分析"><a href="#ServiceLoader类源码分析" class="headerlink" title="ServiceLoader类源码分析"></a>ServiceLoader类源码分析</h4><p><strong><em>ServiceLoader</em></strong>类的入口是两个静态方法</p>
 <pre><code>public static &lt;S&gt; ServiceLoader&lt;S&gt; load(Class&lt;S&gt; service) {
