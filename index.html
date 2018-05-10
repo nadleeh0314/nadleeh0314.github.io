@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一名coder的成长笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nadleeh&#39;s BLOG">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Nadleeh&#39;s BLOG">
+<meta property="og:description" content="一名coder的成长笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nadleeh&#39;s BLOG">
+<meta name="twitter:description" content="一名coder的成长笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Nadleeh's BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nadleeh's BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-borad">
+          <a href="/board/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            borad
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/Load Native Library/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nadleeh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nadleeh's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/10/Load Native Library/" itemprop="url">Native Library Load</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T21:49:38+08:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/10/Load Native Library/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/10/Load Native Library/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Native-Library-Load"><a href="#Native-Library-Load" class="headerlink" title="Native Library Load"></a>Native Library Load</h2><h4 id="学习背景"><a href="#学习背景" class="headerlink" title="学习背景"></a>学习背景</h4><blockquote>
+<p>前段时间碰到一个问题，timesten数据库连接的时候报错了，报错内容是<code>Problems with loading Native library/missing methods:no jdbc ttjdbcCs1122 in java.path.library</code>,从这个报错的根本原因中可以找到一个大概信息就是加载某个native library失败了，还看到了一个新的配置路径<strong><em>java.path.library</em></strong>，而我们比较熟悉的是<strong><em>java.class.path</em></strong>，从名字来看两者之间应该也有不少共同点。</p>
+</blockquote>
+<h4 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h4><p>先来从堆栈中找找问题的原因，根据堆栈报错的原因找到具体的报错代码</p>
+<pre><code>/*      */   protected void loadSharedLibrary(boolean paramBoolean)
+/*      */     throws SQLException
+/*      */   {
+/* 3110 */     String str1 = paramBoolean ? &quot;ttJdbcCS&quot; : &quot;ttJdbc&quot;;
+/*      */     try
+/*      */     {
+/* 3114 */       String str2 = System.getProperty(&quot;os.name&quot;);
+/* 3115 */       Logger.logln(&quot;*JdbcOdbc.loadSharedLibrary: os.name &quot; + str2);
+/* 3116 */       if ((str2.startsWith(&quot;Windows&quot;)) || (str2.startsWith(&quot;windows&quot;)))
+/*      */       {
+/* 3121 */         str1 = str1 + 1122;
+/*      */       } 
+/* 3126 */       if (Logger.isTracingOn()) {
+/* 3127 */         localObject = new Date();
+/* 3128 */         Logger.logln(&quot;*JdbcOdbc.loadSharedLibrary: Loading &quot; + str1 + &quot; &quot; + ((Date)localObject).toString());
+/*      */       }90
+/* 3131 */       System.loadLibrary(str1);
+/* 3134 */       Logger.logln(&quot;*JdbcOdbc.loadSharedLibrary: java.library.path &quot; + System.getProperty(&quot;java.library.path&quot;));
+/* 3136 */       Logger.logln(&quot;*JdbcOdbc.loadSharedLibrary: java.class.path &quot; + System.getProperty(&quot;java.class.path&quot;));
+/* 3139 */       localObject = getFullDotProdVersion();
+/* 3140 */       Logger.logln(&quot;*JdbcOdbc.loadSharedLibrary: Loading shared library version &quot; + (String)localObject);
+/* 3143 */       if (!&quot;11.2.2.8.0&quot;.equals(localObject)) {
+/* 3144 */         StringBuffer localStringBuffer = new StringBuffer(128);
+/* 3145 */         localStringBuffer.append(&quot;Specified driver could not be loaded, shared library version mismatch for [&quot;);
+/* 3147 */         localStringBuffer.append(str1);
+/* 3148 */         localStringBuffer.append(&quot;].  Expected version=&quot;);
+/* 3149 */         localStringBuffer.append(&quot;11.2.2.8.0&quot;);
+/* 3150 */         localStringBuffer.append(&quot;; loaded version=&quot;);
+/* 3151 */         localStringBuffer.append((String)localObject);
+/* 3152 */         throw new SQLException(localStringBuffer.toString(), &quot;IM003&quot;);
+/*      */       }
+/* 3154 */       initIDs();
+/*      */     }
+/*      */     catch (UnsatisfiedLinkError localUnsatisfiedLinkError) {
+/* 3157 */       Logger.logln(&quot;*JdbcOdbc.loadSharedLibrary: Unable to load, unsatisfied link error &quot; + str1 + &quot; library&quot;);
+/* 3158 */       localObject = new SQLException(&quot;Problems with loading native library/missing methods: &quot; + localUnsatisfiedLinkError.getMessage(), &quot;IM003&quot;);
+/* 3160 */       ((SQLException)localObject).setStackTrace(localUnsatisfiedLinkError.getStackTrace());
+/* 3161 */       throw ((Throwable)localObject);
+/*      */     }
+/*      */     catch (SecurityException localSecurityException) {
+/* 3164 */       Logger.logln(&quot;*JdbcOdbc.loadSharedLibrary: Unable to load &quot; + str1 + &quot; library&quot;);
+/* 3165 */       Object localObject = new SQLException(&quot;Security issue with loading native library: &quot; + localSecurityException.getMessage(), &quot;IM003&quot;);
+/* 3167 */       ((SQLException)localObject).setStackTrace(localSecurityException.getStackTrace());
+/* 3168 */       throw ((Throwable)localObject);
+/*      */     }
+/*      */   }
+</code></pre><p>可以看到异常是在第3157行产生并且在第3161行抛出的，而产生并抛出的原因是捕获了<code>UnsatisfiedLinkError</code>,而这个Error其实就是在第3131行的<code>System.loadLibrary(str1);</code>中抛出的，而这个<code>System.loadLibrary()</code>是什么呢，其实看到之前报错的原因以及这个名字就能猜到，这是跟本地方法的链接库加载有关。一般的java类中的java方法都是随着java类的加载加载到内存的，而java类的加载归功于类加载器<code>ClassLoader</code>，而本地方法的链接库（由虚拟器决定，一般我们用的最多的openjdk，oracle的jdk用的都是hotspot，hotspot使用c写的，所以我们常见的链接库也都是c写的，一般都是.dll文件）也是需要加载的，往下看就知道，其实它的加载也是由类加载器完成的。接下来先来看看<code>System.loadLibrary(str1);</code>的内容</p>
+<pre><code>public static void loadLibrary(String libname) {
+    Runtime.getRuntime().loadLibrary0(Reflection.getCallerClass(), libname);
+}
+
+public static void load(String filename) {
+    Runtime.getRuntime().load0(Reflection.getCallerClass(), filename);
+}
+</code></pre><p>在<code>System</code>类中有如上两个方法，而这两个方法最终调用的其实都是<code>ClassLoader.loadLibrary(fromClass, libname, false);</code>，所以说，其实本地方法的加载也是通过类加载器去加载的。</p>
+<pre><code>synchronized void load0(Class&lt;?&gt; fromClass, String filename) {
+    SecurityManager security = System.getSecurityManager();
+    if (security != null) {
+        security.checkLink(filename);
+    }
+    if (!(new File(filename).isAbsolute())) {
+        throw new UnsatisfiedLinkError(
+            &quot;Expecting an absolute path of the library: &quot; + filename);
+    }
+    ClassLoader.loadLibrary(fromClass, filename, true);
+}
+
+synchronized void loadLibrary0(Class&lt;?&gt; fromClass, String libname) {
+    SecurityManager security = System.getSecurityManager();
+    if (security != null) {
+        security.checkLink(libname);
+    }
+    if (libname.indexOf((int)File.separatorChar) != -1) {// 不能带文件分隔符
+        throw new UnsatisfiedLinkError(
+&quot;Directory separator should not appear in library name: &quot; + libname);
+    }
+    ClassLoader.loadLibrary(fromClass, libname, false);
+}
+</code></pre><p>从上述两个方法可以看出之间的区别，<code>load0</code>其实就是加载绝对路径的链接库，而<code>loadLibrary0</code>加载的不能带文件分隔符，也就是说加载的参数必须是链接库的名称，这两个方法就是加载链接库的两种方式。</p>
+<pre><code>// Invoked in the java.lang.Runtime class to implement load and loadLibrary.
+static void loadLibrary(Class&lt;?&gt; fromClass, String name,
+                        boolean isAbsolute) {
+    ClassLoader loader =
+        (fromClass == null) ? null : fromClass.getClassLoader(); //获得调用类的类加载器
+    if (sys_paths == null) {
+        usr_paths = initializePath(&quot;java.library.path&quot;); //最前面提到的配置路径
+        sys_paths = initializePath(&quot;sun.boot.library.path&quot;); //系统启动路径
+    }
+    if (isAbsolute) { //如果是绝对路径，相当于直接找到文件了，直接加载，如果加载失败直接抛出异常
+        if (loadLibrary0(fromClass, new File(name))) {
+            return;
+        }
+        throw new UnsatisfiedLinkError(&quot;Can&apos;t load library: &quot; + name);
+    }
+    if (loader != null) {
+        String libfilename = loader.findLibrary(name); 
+        //通过类加载器以及链接库名寻找文件名，如果是第三方的或者自己写的一般都是调用AppClassLoader，
+        //其实就是UrlClassLoader，而这个类的findLibrary直接返回null，也就是我们调用的方法一般不会
+        //走到这里，只有ExtClassLoader加载的才会走到这边，所以我们先忽略
+        if (libfilename != null) {
+            File libfile = new File(libfilename);
+            if (!libfile.isAbsolute()) {
+                throw new UnsatisfiedLinkError(
+&quot;ClassLoader.findLibrary failed to return an absolute path: &quot; + libfilename);
+            }
+            if (loadLibrary0(fromClass, libfile)) {// 加载
+                return;
+            }
+            throw new UnsatisfiedLinkError(&quot;Can&apos;t load &quot; + libfilename);
+        }
+    }
+    //外部通过AppClassLoader加载的一般走到这边，去java.library.path和sun.boot.library.path这两个路径下找
+    for (int i = 0 ; i &lt; sys_paths.length ; i++) {
+        File libfile = new File(sys_paths[i], System.mapLibraryName(name));// 根据系统以及lib名称，返回对应的文件名称，比如在windows系统中就是家.dll后缀
+        if (loadLibrary0(fromClass, libfile)) {
+            return;
+        }
+        libfile = ClassLoaderHelper.mapAlternativeName(libfile); //如果原来的文件加载不到，则根据不同系统，可能有其他加载地址，windows下是直接返回null
+        if (libfile != null &amp;&amp; loadLibrary0(fromClass, libfile)) {
+            return;
+        }
+    }
+    if (loader != null) {
+        for (int i = 0 ; i &lt; usr_paths.length ; i++) {
+            File libfile = new File(usr_paths[i],
+                                    System.mapLibraryName(name));
+            if (loadLibrary0(fromClass, libfile)) {
+                return;
+            }
+            libfile = ClassLoaderHelper.mapAlternativeName(libfile);
+            if (libfile != null &amp;&amp; loadLibrary0(fromClass, libfile)) {
+                return;
+            }
+        }
+    }
+    // Oops, it failed
+    throw new UnsatisfiedLinkError(&quot;no &quot; + name + &quot; in java.library.path&quot;);
+}
+</code></pre><p>从上面的代码可以看到，一般由第三方提供的（当然有些spi可能是通过bootClassLoader加载的）都是去java.library.path和sun.boot.library.path这两个路径下去寻找链接库，而<code>System.mapLibraryName(name)</code>是个本地方法，通过这个方法返回的才是真正的链接库名称，这个本地方法就是根据系统以及lib名称，得到平台相关的一个lib名称(其实就是根据不同系统，给libname加上相应的前缀以及后缀)，比如在windows中传入的lib是test，则返回的就是test.dll，而这个就是要加载的链接库。接下来看看最关键的方法，<code>loadLibrary0(fromClass, libfile)</code></p>
+<pre><code>private static boolean loadLibrary0(Class&lt;?&gt; fromClass, final File file) {
+    // Check to see if we&apos;re attempting to access a static library
+    String name = findBuiltinLib(file.getName());
+    boolean isBuiltin = (name != null);
+    if (!isBuiltin) {
+        boolean exists = AccessController.doPrivileged(
+            new PrivilegedAction&lt;Object&gt;() {
+                public Object run() {
+                    return file.exists() ? Boolean.TRUE : null;
+                }})
+            != null;
+        if (!exists) {
+            return false;
+        }
+        try {
+            name = file.getCanonicalPath(); //去除文件的一些相对路径符号，比如..,真正的绝对路径！！！
+        } catch (IOException e) {
+            return false;
+        }
+    }
+    ClassLoader loader =
+        (fromClass == null) ? null : fromClass.getClassLoader();// 获取调用类的类加载器
+    Vector&lt;NativeLibrary&gt; libs =
+        loader != null ? loader.nativeLibraries : systemNativeLibraries; //一般都是返回类加载器的nativeLibraries
+    synchronized (libs) {
+        int size = libs.size(); //如果lib中已经存在的，表示已经在该类加载器中加载过了，直接返回true
+        for (int i = 0; i &lt; size; i++) {
+            NativeLibrary lib = libs.elementAt(i);
+            if (name.equals(lib.name)) {
+                return true;
+            }
+        }
+
+        synchronized (loadedLibraryNames) { //静态变量，存储所有类加载器加载的链接库，走到这说明该类加载器中还没由加载对应的链接库，
+        //但是loadedLibraryNames中已经存在，则说明其实由其他类加载器已经加载，从这里可以看出，链接库只能被加载一次，如果已经被某个类加载器加载了，则无法被其他类加载器加载
+            if (loadedLibraryNames.contains(name)) {
+                throw new UnsatisfiedLinkError
+                    (&quot;Native Library &quot; +
+                     name +
+                     &quot; already loaded in another classloader&quot;);
+            }
+            /* If the library is being loaded (must be by the same thread,
+             * because Runtime.load and Runtime.loadLibrary are
+             * synchronous). The reason is can occur is that the JNI_OnLoad
+             * function can cause another loadLibrary invocation.
+             *
+             * Thus we can use a static stack to hold the list of libraries
+             * we are loading.
+             *
+             * If there is a pending load operation for the library, we
+             * immediately return success; otherwise, we raise
+             * UnsatisfiedLinkError.
+             */
+            int n = nativeLibraryContext.size(); //lib.load可能产生递归调用，如果递归调用的lib与前面某一层的lib相同，则会产生死循环，加上上下文发现前面某层已经加载了，则直接返回true
+            for (int i = 0; i &lt; n; i++) {
+                NativeLibrary lib = nativeLibraryContext.elementAt(i);
+                if (name.equals(lib.name)) {
+                    if (loader == lib.fromClass.getClassLoader()) {
+                        return true;
+                    } else {
+                        throw new UnsatisfiedLinkError
+                            (&quot;Native Library &quot; +
+                             name +
+                             &quot; is being loaded in another classloader&quot;);
+                    }
+                }
+            }
+            NativeLibrary lib = new NativeLibrary(fromClass, name, isBuiltin);
+            nativeLibraryContext.push(lib);
+            try {
+                lib.load(name, isBuiltin); //
+            } finally {
+                nativeLibraryContext.pop();
+            }
+            if (lib.loaded) {
+                loadedLibraryNames.addElement(name);//静态变量loadedLibraryNames中增加已经加载的链接库
+                libs.addElement(lib);//此类加载器nativeLibraries增加对应的lib
+                return true;
+            }
+            return false;
+        }
+    }
+}
+</code></pre><p>由上述内容可以看到一个很特别的地方，其实JVM只允许一个类加载器去加载某个链接库，这个好像与类的加载又不同，同一个类是允许不同的类加载器去加载，只是对应的并不能算作是同一个类。所以就可能出现下面的情况</p>
+<p>1.症状</p>
+<p>如果Tomcat上的两个web应用需要使用相同的JNI本地库，当第二个web应用加载JNI本地库时，就会出现Native Library xxx.so already loaded in another classloader错误</p>
+<p>2.原因</p>
+<p> Java虚拟机为了在JNI本地库中确保基于classloader的命名空间隔离，因而不允许一个JNI本地库被两个不同的classloader加载。而Tomcar中web应用的classloader(WebAppClassLoader)是独立的，也就是说每个web应用都有一个专属的classloader，这样就出现两个classloader加载同一JNI本地库的情况</p>
+<p>3.解决方法</p>
+<p>在tomcat中，虽然不同的web应用使用不同的classloader，但是web应用classloader的父classloader是相同的，这样根据双亲委托模型只要让父classloader加载JNI本地库就可以避免被多个classloader加载。父classloader是sharedClassLoader，用来加载${CATALINA_HOME}/conf/catalina.properties中shared.loader配置目录下的类文件，shared.loader默认为空，因此可以配置一个路径并且在该路径下放入对应的jar包以及链接库文件，问题就可以解决</p>
+<h4 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h4><p>看了上面的源码以及介绍，再来看看最刚开始的问题就很简单了，其实就是加载<code>ttjdbcCs1122.dll</code>文件未加载到，那么我们只要把这个文件放在<code>java.library.path</code>下即可。那么怎么才能知道<code>java.library.path</code>包含了那些路径呢？其实很简单，在java代码中调用<code>System.getProperty(&quot;java.library.path&quot;)</code>即可得到对应的路径，在其中的某个路径下加入<code>ttjdbcCs1122.dll</code>文件即可，这个文件在TimesTen安装路径下可以找到，或者将TimesTen的安装路径加入到Path环境变量中也可以，path环境变量中的路径都会放到<code>java.library.path</code>中去。</p>
+<h4 id="问题反思"><a href="#问题反思" class="headerlink" title="问题反思"></a>问题反思</h4><p>本地方法我们自己一般比较少写，java一般用于上层应用开发，但是java在面对一些比较底层的，涉及操作系统的底层操作时略显不足，因此用一些比较贴近系统的语言来作为本地方法与系统交互。这其实跟虚拟机以及操作系统有关，我们一般常见的就是C\C++,但是从上面也可以看出来，如果使用了本地方法，那么除了需要加载方法所对应的类时，还需要加载本地方法的链接库，因此相对应也会增大开销。我们平时在编写java代码时，除非万不得已，不然还是不要去写本地方法。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/spi（Service Provider Interface）学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nadleeh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nadleeh's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/01/spi（Service Provider Interface）学习/" itemprop="url">spi（Service Provider Interface）学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T23:39:38+08:00">
+                2018-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/01/spi（Service Provider Interface）学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/01/spi（Service Provider Interface）学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="spi（Service-Provider-Interface）学习"><a href="#spi（Service-Provider-Interface）学习" class="headerlink" title="spi（Service Provider Interface）学习"></a>spi（Service Provider Interface）学习</h2><h4 id="学习背景"><a href="#学习背景" class="headerlink" title="学习背景"></a>学习背景</h4><blockquote>
+<p>这段时间在看dubbo接口源代码的时候，看到一个类<strong><em>ExtensionLoader</em></strong>，这个类可以使用类似<code>ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()</code>的方式获取对应接口<strong><em>Protocol</em></strong>的实现类，在学习了这个类之后，发现其实现理念是基于java的spi(Service Provider Interface)。</p>
+</blockquote>
+<h4 id="spi介绍"><a href="#spi介绍" class="headerlink" title="spi介绍"></a>spi介绍</h4><p>spi其实是一种生产厂家提供给使用者底层扩展的一种机制，而其实现基础的jdk提供的。其实比如有时候一些第三放提供的jar包，在log实现，jdbc驱动选择方面有可能有一个默认的实现，但是更多的是可以让用户去选择。而这些又不方便使用修改代码的方式去jar包中修改，因此，jdk提供了一种基于文件修改选择实现类的方式，其实现的原理也很简单，就是jdk提供的一个工具类———<strong><em>ServiceLoader</em></strong>。</p>
+<h4 id="ServiceLoader类源码分析"><a href="#ServiceLoader类源码分析" class="headerlink" title="ServiceLoader类源码分析"></a>ServiceLoader类源码分析</h4><p><strong><em>ServiceLoader</em></strong>类的入口是两个静态方法</p>
+<pre><code>public static &lt;S&gt; ServiceLoader&lt;S&gt; load(Class&lt;S&gt; service) {
+    ClassLoader cl = Thread.currentThread().getContextClassLoader();
+    return ServiceLoader.load(service, cl);
+}
+
+public static &lt;S&gt; ServiceLoader&lt;S&gt; load(Class&lt;S&gt; service, ClassLoader loader){
+    return new ServiceLoader&lt;&gt;(service, loader);
+}
+</code></pre><p>其实这两个入口最后都指向的是同一个入口<code>public static &lt;S&gt; ServiceLoader&lt;S&gt; load(Class&lt;S&gt; service, ClassLoader loader)</code>,仅仅是一个指定了加载器，一个使用上下文加载器。而这里的<code>Class&lt;S&gt; service</code>其实就是需要加载实现类的接口。再来看下接下来的实现代码</p>
+<pre><code>private ServiceLoader(Class&lt;S&gt; svc, ClassLoader cl) {
+    service = Objects.requireNonNull(svc, &quot;Service interface cannot be null&quot;); //断言需要加载的接口不能为空
+    loader = (cl == null) ? ClassLoader.getSystemClassLoader() : cl; //如果没有穿加载器就使用上下文类加载器
+    acc = (System.getSecurityManager() != null) ? AccessController.getContext() : null;// 校验限制
+    reload(); //重新加载
+}
+
+public void reload() {
+    providers.clear(); //private LinkedHashMap&lt;String,S&gt; providers = new LinkedHashMap&lt;&gt;(); provider就是缓存的借口实现类
+    lookupIterator = new LazyIterator(service, loader); //生成查找递归器
+}
+
+private LazyIterator(Class&lt;S&gt; service, ClassLoader loader) {
+        this.service = service;
+        this.loader = loader;
+}
+</code></pre><p>上述代码其实就已经初始化了类初始化的对象，但其实发现对于实现类的加载以及初始化均未看到。其实实现类的加载关键就是<strong><em>LazyIterator</em></strong>这个对象。从这个对象的名字上其实就可以看出两个意思，分别是lazy和iterator，lazy就说明了这里为什么还没有加载，其实就是用的懒加载，具体使用的时候再进行加载。而懒加载实现的方式其实就是通过iterator递归的时候加载。其实可以想到，一个接口可以提供的实现不一定仅仅只有一种，可能自己定义多种，比如我即可能连接oracle数据库，也可能连接timeTen数据库（一种内存数据库），因此用实现<strong><em>Iterator</em></strong> 接口的方式再好不过。因此<strong><em>ServiceLoader</em></strong>类其实就实现了<code>Iterable&lt;S&gt;</code>接口。再来看下对应的实现方法</p>
+<pre><code>public Iterator&lt;S&gt; iterator() {
+    return new Iterator&lt;S&gt;() {
+
+        Iterator&lt;Map.Entry&lt;String,S&gt;&gt; knownProviders //已经加载的实现方法递归器
+            = providers.entrySet().iterator();
+
+        public boolean hasNext() { //如果已经加载的就有下一个，则返回true，如果没有看看未加载的是否还有
+            if (knownProviders.hasNext())
+                return true;
+            return lookupIterator.hasNext();
+        }
+
+        public S next() { //如果已经加载的就有下一个，则返回已加载的下一个实现，如果没有返回未加载的下一个实现
+            if (knownProviders.hasNext())
+                return knownProviders.next().getValue();
+            return lookupIterator.next();
+        }
+
+        public void remove() { //不支持
+            throw new UnsupportedOperationException();
+        }
+
+    };
+}
+</code></pre><p>看完上述代码，其实就知道了一般一个spi的调用模式。</p>
+<ol>
+<li>使用ServiceLoader sl = ServiceLoader.load(XXX.class);实例化一个ServiceLoader对象</li>
+<li>使用Iterator<xxx> it = sl.iterator();获得sl的迭代器</xxx></li>
+<li>使用for(XXX xxx : it){…} 或者 while(it.hasNext()){XXX xxx = it.next(); …}这样的迭代方式获取一个个实现类然后进行逻辑处理</li>
+</ol>
+<p>知道了调用模式之后我们再来看看<strong><em>lookupIterator</em></strong>的迭代，其实就是真正加载实现类的地方</p>
+<pre><code>// Private inner class implementing fully-lazy provider lookup
+
+private class LazyIterator
+    implements Iterator&lt;S&gt;
+{
+
+    Class&lt;S&gt; service;
+    ClassLoader loader;
+    Enumeration&lt;URL&gt; configs = null;
+    Iterator&lt;String&gt; pending = null;
+    String nextName = null;
+
+    private LazyIterator(Class&lt;S&gt; service, ClassLoader loader) {
+        this.service = service;
+        this.loader = loader;
+    }
+
+    private boolean hasNextService() {
+        if (nextName != null) {
+            return true;
+        }
+        if (configs == null) {
+            try {
+                String fullName = PREFIX + service.getName();// PREFIX = &quot;META-INF/services/&quot;
+                if (loader == null)
+                    configs = ClassLoader.getSystemResources(fullName); // 获取对应接口的配置文件
+                else
+                    configs = loader.getResources(fullName);
+            } catch (IOException x) {
+                fail(service, &quot;Error locating configuration files&quot;, x);
+            }
+        }
+        while ((pending == null) || !pending.hasNext()) {
+            if (!configs.hasMoreElements()) { //如果没有多的配置文件，则返回false
+                return false;
+            }
+            pending = parse(service, configs.nextElement()); // 解析文件，返回实现类迭代器
+        }
+        nextName = pending.next(); // 下个实现类名
+        return true;
+    }
+
+    private S nextService() {
+        if (!hasNextService())
+            throw new NoSuchElementException();
+        String cn = nextName;
+        nextName = null;
+        Class&lt;?&gt; c = null;
+        try {
+            c = Class.forName(cn, false, loader); // 类加载
+        } catch (ClassNotFoundException x) {
+            fail(service,
+                 &quot;Provider &quot; + cn + &quot; not found&quot;);
+        }
+        if (!service.isAssignableFrom(c)) { // 如果未实现xxx接口，则抛出异常
+            fail(service,
+                 &quot;Provider &quot; + cn  + &quot; not a subtype&quot;);
+        }
+        try {
+            S p = service.cast(c.newInstance());// 实例化并且转化为对应接口
+            providers.put(cn, p);// 放入已加载的实现类中
+            return p;// 返回对应实现类
+        } catch (Throwable x) {
+            fail(service,
+                 &quot;Provider &quot; + cn + &quot; could not be instantiated&quot;,
+                 x);
+        }
+        throw new Error();          // This cannot happen
+    }
+
+    public boolean hasNext() {
+        if (acc == null) {
+            return hasNextService();
+        } else {
+            PrivilegedAction&lt;Boolean&gt; action = new PrivilegedAction&lt;Boolean&gt;() {
+                public Boolean run() { return hasNextService(); }
+            };
+            return AccessController.doPrivileged(action, acc);
+        }
+    }
+
+    public S next() {
+        if (acc == null) {
+            return nextService();
+        } else {
+            PrivilegedAction&lt;S&gt; action = new PrivilegedAction&lt;S&gt;() {
+                public S run() { return nextService(); }
+            };
+            return AccessController.doPrivileged(action, acc);
+        }
+    }
+
+    public void remove() {
+        throw new UnsupportedOperationException();
+    }
+
+}
+</code></pre><p>以上就是作为使用者需要配置的地方，在<code>META-INF/services/</code>下配置一个与需要加载的接口同名的文件，文件内容格式可以看文件解析的代码，如下：</p>
+<pre><code>// Parse a single line from the given configuration file, adding the name
+// on the line to the names list.
+//
+private int parseLine(Class&lt;?&gt; service, URL u, BufferedReader r, int lc,
+                      List&lt;String&gt; names)
+    throws IOException, ServiceConfigurationError
+{
+    String ln = r.readLine();
+    if (ln == null) {
+        return -1;
+    }
+    int ci = ln.indexOf(&apos;#&apos;);
+    if (ci &gt;= 0) ln = ln.substring(0, ci); //如果那行存在&apos;#&apos;，则取#前的内容，之后的内容为注释
+    ln = ln.trim(); // 去除空格
+    int n = ln.length();
+    if (n != 0) {
+        if ((ln.indexOf(&apos; &apos;) &gt;= 0) || (ln.indexOf(&apos;\t&apos;) &gt;= 0))// 配置串内部不能出现空格
+            fail(service, u, lc, &quot;Illegal configuration-file syntax&quot;);
+        int cp = ln.codePointAt(0);
+        if (!Character.isJavaIdentifierStart(cp))//接口名称的第一个字母需要符合java命名规范
+            fail(service, u, lc, &quot;Illegal provider-class name: &quot; + ln);
+        for (int i = Character.charCount(cp); i &lt; n; i += Character.charCount(cp)) {
+            cp = ln.codePointAt(i);
+            if (!Character.isJavaIdentifierPart(cp) &amp;&amp; (cp != &apos;.&apos;))
+                fail(service, u, lc, &quot;Illegal provider-class name: &quot; + ln);
+        }
+        if (!providers.containsKey(ln) &amp;&amp; !names.contains(ln))
+            names.add(ln);
+    }
+    return lc + 1;
+}
+
+// Parse the content of the given URL as a provider-configuration file.
+//
+// @param  service
+//         The service type for which providers are being sought;
+//         used to construct error detail strings
+//
+// @param  u
+//         The URL naming the configuration file to be parsed
+//
+// @return A (possibly empty) iterator that will yield the provider-class
+//         names in the given configuration file that are not yet members
+//         of the returned set
+//
+// @throws ServiceConfigurationError
+//         If an I/O error occurs while reading from the given URL, or
+//         if a configuration-file format error is detected
+//
+private Iterator&lt;String&gt; parse(Class&lt;?&gt; service, URL u)
+    throws ServiceConfigurationError
+{
+    InputStream in = null;
+    BufferedReader r = null;
+    ArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();
+    try {
+        in = u.openStream();
+        r = new BufferedReader(new InputStreamReader(in, &quot;utf-8&quot;));
+        int lc = 1;
+        while ((lc = parseLine(service, u, r, lc, names)) &gt;= 0); //解析每行，放到namelist中
+    } catch (IOException x) {
+        fail(service, &quot;Error reading configuration file&quot;, x);
+    } finally {
+        try {
+            if (r != null) r.close();
+            if (in != null) in.close();
+        } catch (IOException y) {
+            fail(service, &quot;Error closing configuration file&quot;, y);
+        }
+    }
+    return names.iterator();
+}
+</code></pre><p>在配置文件中一行就代表配置一个实现类，然后每行只需要记载实现类的类路径，比如说com.learning.spring.App即可，且提供#后的内容作为注释。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>在最刚开始学习jdbc的时候，我们需要创建jdbc连接的时候都需要写一个<code>Class.forName(xxxDriver.class);</code>，然后再调用<code>DriverManager.getConnection()</code>来获取连接，其实看过源码的人就知道，数据库提供的驱动类xxxDriver中都有一段静态代码段，用于向DriverManager注册自身，而<code>Class.forName(xxxDriver.class);</code>就是为了调用这段静态代码段。那么在jdbc4.0之后，jdk就还提供了spi的方式来进行注册对应的驱动，也就是不需要再手动调用<code>Class.forName(xxxDriver.class);</code>了，可以直接使用<code>DriverManager.getConnection()</code>来获取连接。其原理也很简单，其实就在于<strong><em>DriverManager</em></strong>也新增了一段静态代码段。</p>
+<pre><code>/**
+ * Load the initial JDBC drivers by checking the System property
+ * jdbc.properties and then use the {@code ServiceLoader} mechanism
+ */
+static {
+    loadInitialDrivers();
+    println(&quot;JDBC DriverManager initialized&quot;);
+}
+
+ private static void loadInitialDrivers() {
+    String drivers;
+    try {
+        drivers = AccessController.doPrivileged(new PrivilegedAction&lt;String&gt;() { //可以在运行属性中配置
+            public String run() {
+                return System.getProperty(&quot;jdbc.drivers&quot;);
+            }
+        });
+    } catch (Exception ex) {
+        drivers = null;
+    }
+    // If the driver is packaged as a Service Provider, load it.
+    // Get all the drivers through the classloader
+    // exposed as a java.sql.Driver.class service.
+    // ServiceLoader.load() replaces the sun.misc.Providers()
+
+    AccessController.doPrivileged(new PrivilegedAction&lt;Void&gt;() {
+        public Void run() {
+
+            ServiceLoader&lt;Driver&gt; loadedDrivers = ServiceLoader.load(Driver.class); //利用spi加载
+            Iterator&lt;Driver&gt; driversIterator = loadedDrivers.iterator();// 获取迭代器
+
+            /* Load these drivers, so that they can be instantiated.
+             * It may be the case that the driver class may not be there
+             * i.e. there may be a packaged driver with the service class
+             * as implementation of java.sql.Driver but the actual class
+             * may be missing. In that case a java.util.ServiceConfigurationError
+             * will be thrown at runtime by the VM trying to locate
+             * and load the service.
+             *
+             * Adding a try catch block to catch those runtime errors
+             * if driver not available in classpath but it&apos;s
+             * packaged as service and that service is there in classpath.
+             */
+            try{
+                while(driversIterator.hasNext()) {
+                    driversIterator.next(); //向DriverManager注册，功能同Class.forName()
+                }
+            } catch(Throwable t) {
+            // Do nothing
+            }
+            return null;
+        }
+    });
+
+    println(&quot;DriverManager.initialize: jdbc.drivers = &quot; + drivers);
+
+    if (drivers == null || drivers.equals(&quot;&quot;)) {
+        return;
+    }
+    String[] driversList = drivers.split(&quot;:&quot;);
+    println(&quot;number of Drivers:&quot; + driversList.length);
+    for (String aDriver : driversList) {
+        try {
+            println(&quot;DriverManager.Initialize: loading &quot; + aDriver);
+            Class.forName(aDriver, true, //注册运行属性中配置的driver
+                    ClassLoader.getSystemClassLoader());
+        } catch (Exception ex) {
+            println(&quot;DriverManager.Initialize: load failed: &quot; + ex);
+        }
+    }
+}
+</code></pre><p>其实从上面可以看出来，jdbc4.0不仅仅提供了spi方式注册驱动，还提供了运行属性配置的方式来注册驱动。</p>
+<h4 id="模式反思"><a href="#模式反思" class="headerlink" title="模式反思"></a>模式反思</h4><p>看了spi的代码，还是有很大的启发。一个是实现Iterator的方式用来代替在类中定义list去递归list的常规方式。这样的方式不仅可以使用foreach的方式，方便使用者灵活使用，还可以隐藏list内容，仅仅对外提供iterator对应的方法，实现内部包装。另一个就是多学习了一种懒加载的方式，使用iterator迭代的时候再去加载。其实关键就是对Iterator接口的活用让我获益匪浅。jdk提供的spi扩展方式相对来说比较简单，下篇文章将讲解下dubbo接口<strong><em>ExtensionLoader</em></strong>提供的spi加载模式以及它的优点。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/记一次日志jar包混淆问题解决/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nadleeh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nadleeh's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/09/记一次日志jar包混淆问题解决/" itemprop="url">记一次日志jar包混淆问题解决</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T22:41:38+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/09/记一次日志jar包混淆问题解决/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/09/记一次日志jar包混淆问题解决/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="记一次日志jar包混淆问题解决"><a href="#记一次日志jar包混淆问题解决" class="headerlink" title="记一次日志jar包混淆问题解决"></a>记一次日志jar包混淆问题解决</h2><h4 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h4><blockquote>
+<p>之前公司的代码打印日志框架用的都是logback，今天在更新代码执行之后突然报了如下问题，而且日志未打印</p>
+</blockquote>
+<pre><code>SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/E:/_ztesoft/repository/org/slf4j/slf4j-log4j12/1.7.12/slf4j-log4j12-1.7.12.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/E:/_ztesoft/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+log4j:WARN No appenders could be found for logger (com.ztesoft.zsmart.bss.ocs.dubbo.impl.billing.BillingQueryServiceImpl).
+log4j:WARN Please initialize the log4j system properly.
+</code></pre><h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>如果了解点slf4j以及logback和log4j的关系，再看上面问题的描述的话，其实可以很快就定位到问题的原因了，slf4j其实是一个日志规范，相当于java中的接口，关于日志的打印并没有实现，而logback以及log4j其实就是日志打印的实现，相当于java中实现了这个接口。</p>
+<h4 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h4><p>上述的描述可能比较抽象，我们可以从具体的源码中去更加彻底地了解slf4j以及logback和log4j的关系。看源码我们需要从入口着手，而这里的入口就是<code>org.slf4j.LoggerFactory.getLogger</code>，日志打印都是直接或间接地通过该方法获取<code>Logger</code>，然后打印日志。</p>
+<pre><code>/*
+ * Return a logger named according to the name parameter using the statically
+ * bound {@link ILoggerFactory} instance.
+ *
+ * @param name The name of the logger.
+ * @return logger
+ */
+public static Logger getLogger(String name) {
+     //iLoggerFactory在slf4j包里只有一个接口，没有任何实现
+    ILoggerFactory iLoggerFactory = getILoggerFactory();
+    return iLoggerFactory.getLogger(name);
+}
+
+ /**
+ * Return the {@link ILoggerFactory} instance in use.
+ * &lt;p/&gt;
+ * &lt;p/&gt;
+ * ILoggerFactory instance is bound with this class at compile time.
+ *
+ * @return the ILoggerFactory instance in use
+ */
+
+public static ILoggerFactory getILoggerFactory() {
+    //INITIALIZATION_STATE是个静态变量，第一次运行该代码时是UNINITIALIZED表示未初始化
+    if (INITIALIZATION_STATE == UNINITIALIZED) {
+        //将状态修改为正在初始化ONGOING_INITIALIZATION
+        INITIALIZATION_STATE = ONGOING_INITIALIZATION;
+        //调用初始化方法
+        performInitialization();
+    }
+    switch (INITIALIZATION_STATE) {
+    case SUCCESSFUL_INITIALIZATION:
+        return StaticLoggerBinder.getSingleton().getLoggerFactory();
+    case NOP_FALLBACK_INITIALIZATION:
+        return NOP_FALLBACK_FACTORY;
+    case FAILED_INITIALIZATION:
+        throw new IllegalStateException(UNSUCCESSFUL_INIT_MSG);
+    case ONGOING_INITIALIZATION:
+        // support re-entrant behavior.
+        // See also http://bugzilla.slf4j.org/show_bug.cgi?id=106
+        return TEMP_FACTORY;
+    }
+    throw new IllegalStateException(&quot;Unreachable code&quot;);
+}
+</code></pre><p>让我们先来看看这个初始化方法，很简单，关键就是这里的这个bind方法</p>
+<pre><code>private final static void performInitialization() {
+       //绑定
+       bind();
+       if (INITIALIZATION_STATE == SUCCESSFUL_INITIALIZATION) {
+           //初始化成功后校验版本
+           versionSanityCheck();
+       }
+   }
+</code></pre><p>之前提到过，slf4j其实只是相当与一个接口，只有slf4j是无法运行，无法打印日志的，因此经常可以看到slf4j+logback或者说slf4j+log4j这样的组合，用以打印日志，而这里的bind方法其实就是用来寻找在环境中是否一来了实现包，也就是logback或者log4j，而这里寻找的依据就是环境中是否存在绑定类<code>StaticLoggerBinder</code></p>
+<pre><code>private final static void bind() {
+    try {
+        //寻找类路径下的staticLoggerBinder实现类
+        Set&lt;URL&gt; staticLoggerBinderPathSet = findPossibleStaticLoggerBinderPathSet();
+        //打印存在多种实现jar包的混淆问题
+        reportMultipleBindingAmbiguity(staticLoggerBinderPathSet);
+        // the next line does the binding
+        //单例模式，获取单例类
+        StaticLoggerBinder.getSingleton();
+        INITIALIZATION_STATE = SUCCESSFUL_INITIALIZATION;
+        // 打印随机选择一个实现
+        reportActualBinding(staticLoggerBinderPathSet);
+        fixSubstitutedLoggers();
+        // 下面的是环境中不存在对应类时的处理
+    } catch (NoClassDefFoundError ncde) {
+        String msg = ncde.getMessage();
+        if (messageContainsOrgSlf4jImplStaticLoggerBinder(msg)) {
+            INITIALIZATION_STATE = NOP_FALLBACK_INITIALIZATION;
+            Util.report(&quot;Failed to load class \&quot;org.slf4j.impl.StaticLoggerBinder\&quot;.&quot;);
+            Util.report(&quot;Defaulting to no-operation (NOP) logger implementation&quot;);
+            Util.report(&quot;See &quot; + NO_STATICLOGGERBINDER_URL + &quot; for further details.&quot;);
+        } else {
+            failedBinding(ncde);
+            throw ncde;
+        }
+    } catch (java.lang.NoSuchMethodError nsme) {
+        String msg = nsme.getMessage();
+        if (msg != null &amp;&amp; msg.indexOf(&quot;org.slf4j.impl.StaticLoggerBinder.getSingleton()&quot;) != -1) {
+            INITIALIZATION_STATE = FAILED_INITIALIZATION;
+            Util.report(&quot;slf4j-api 1.6.x (or later) is incompatible with this binding.&quot;);
+            Util.report(&quot;Your binding is version 1.5.5 or earlier.&quot;);
+            Util.report(&quot;Upgrade your binding to version 1.6.x.&quot;);
+        }
+        throw nsme;
+    } catch (Exception e) {
+        failedBinding(e);
+        throw new IllegalStateException(&quot;Unexpected initialization failure&quot;, e);
+    }
+}
+
+/**
+ * Prints a warning message on the console if multiple bindings were found on the class path.
+ * No reporting is done otherwise.
+ *
+ */
+private static void reportMultipleBindingAmbiguity(Set&lt;URL&gt; staticLoggerBinderPathSet) {
+    if (isAmbiguousStaticLoggerBinderPathSet(staticLoggerBinderPathSet)) {
+        Util.report(&quot;Class path contains multiple SLF4J bindings.&quot;);
+        Iterator&lt;URL&gt; iterator = staticLoggerBinderPathSet.iterator();
+        while (iterator.hasNext()) {
+            URL path = (URL) iterator.next();
+            Util.report(&quot;Found binding in [&quot; + path + &quot;]&quot;);
+        }
+        Util.report(&quot;See &quot; + MULTIPLE_BINDINGS_URL + &quot; for an explanation.&quot;);
+    }
+}
+
+private static void reportActualBinding(Set&lt;URL&gt; staticLoggerBinderPathSet) {
+    if (isAmbiguousStaticLoggerBinderPathSet(staticLoggerBinderPathSet)) {
+        Util.report(&quot;Actual binding is of type [&quot; + StaticLoggerBinder.getSingleton().getLoggerFactoryClassStr() + &quot;]&quot;);
+    }
+}
+
+ private static Set&lt;URL&gt; findPossibleStaticLoggerBinderPathSet() {
+    // use Set instead of list in order to deal with bug #138
+    // LinkedHashSet appropriate here because it preserves insertion order during iteration
+    // 用于返回环境中的staticLoggerBinder路径
+    Set&lt;URL&gt; staticLoggerBinderPathSet = new LinkedHashSet&lt;URL&gt;();
+    try {
+        // 返回加载LoggerFactory类的类加在器，一般就是个AppClassLoader
+        ClassLoader loggerFactoryClassLoader = LoggerFactory.class.getClassLoader();
+        Enumeration&lt;URL&gt; paths;
+        if (loggerFactoryClassLoader == null) {
+            paths = ClassLoader.getSystemResources(STATIC_LOGGER_BINDER_PATH);
+        } else {
+            // 查找环境中的StaticLoggerBinder.class
+            // STATIC_LOGGER_BINDER_PATH = &quot;org/slf4j/impl/StaticLoggerBinder.class&quot;;
+            paths = loggerFactoryClassLoader.getResources(STATIC_LOGGER_BINDER_PATH);
+        }
+        while (paths.hasMoreElements()) {
+            URL path = (URL) paths.nextElement();
+            staticLoggerBinderPathSet.add(path);
+        }
+    } catch (IOException ioe) {
+        Util.report(&quot;Error getting resources from path&quot;, ioe);
+    }
+    return staticLoggerBinderPathSet;
+}
+</code></pre><p>在上述的代码中，我们已经可以看到了这次问题出现的地点了，控制台打印的日志也就来源于这里。因为slf4j在寻找<strong><em>StaticLoggerBinder</em></strong>时即发现了logback和log4j下都有<code>org.slf4j.impl.StaticLoggerBinder</code>,然后执行<code>StaticLoggerBinder.getSingleton();</code>的时候，如果类路径中存在多个同名类，由于java的类加载机制，会随机加载一个，且一旦加载后，对应的class信息会放在方法区中，下次再次使用这个类时，会先从方法区中去取，如果有的话直接使用，不会再次加载（详情可以参考java的内存模型以及类加载机制）。因此也就是说，slf4j会在logback和log4j中随机选择一个绑定，且后面的日志打印都会使用这个日志实现，而这里的问题就是选择了log4j,而没有使用logback,但是系统中只有logback的配置，并没有log4j的配置。</p>
+<h4 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h4><p>知道问题的原因了，其实就很好解决了，去掉一个实现即可，因为环境中有logback的配置，因此去掉log4j的依赖。因为是用得maven搭的环境，而且在project是间接依赖了这个jar包，可以先去maven树中去搜索下<em>log4j-over-slf4j.jar</em>这个jar包，然后查看在那个直接依赖中间接依赖了这个jar包，然后在这个直接依赖的jar包中添加如下内容，去除依赖即可。</p>
+<pre><code>&lt;exclusions&gt;
+    &lt;exclusion&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j-over-slf4j&lt;/artifactId&gt;
+    &lt;/exclusion&gt;
+&lt;/exclusions&gt;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Nadleeh" />
+            
+              <p class="site-author-name" itemprop="name">Nadleeh</p>
+              <p class="site-description motion-element" itemprop="description">一名coder的成长笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Nadleeh</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://nadleeh0314.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

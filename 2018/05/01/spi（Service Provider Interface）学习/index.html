@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java,spi," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="spi（Service Provider Interface）学习学习背景 这段时间在看dubbo接口源代码的时候，看到一个类ExtensionLoader，这个类可以使用类似ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()的方式获取对应接口Protocol的实现类，在学习了这个类之后，发现其实现理念">
+<meta name="keywords" content="java,spi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spi（Service Provider Interface）学习">
+<meta property="og:url" content="http://yoursite.com/2018/05/01/spi（Service Provider Interface）学习/index.html">
+<meta property="og:site_name" content="Nadleeh&#39;s BLOG">
+<meta property="og:description" content="spi（Service Provider Interface）学习学习背景 这段时间在看dubbo接口源代码的时候，看到一个类ExtensionLoader，这个类可以使用类似ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()的方式获取对应接口Protocol的实现类，在学习了这个类之后，发现其实现理念">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-01T15:43:59.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spi（Service Provider Interface）学习">
+<meta name="twitter:description" content="spi（Service Provider Interface）学习学习背景 这段时间在看dubbo接口源代码的时候，看到一个类ExtensionLoader，这个类可以使用类似ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()的方式获取对应接口Protocol的实现类，在学习了这个类之后，发现其实现理念">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/01/spi（Service Provider Interface）学习/"/>
+
+
+
+
+
+  <title>spi（Service Provider Interface）学习 | Nadleeh's BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nadleeh's BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-borad">
+          <a href="/board/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            borad
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/spi（Service Provider Interface）学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nadleeh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nadleeh's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">spi（Service Provider Interface）学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T23:39:38+08:00">
+                2018-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/01/spi（Service Provider Interface）学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/01/spi（Service Provider Interface）学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="spi（Service-Provider-Interface）学习"><a href="#spi（Service-Provider-Interface）学习" class="headerlink" title="spi（Service Provider Interface）学习"></a>spi（Service Provider Interface）学习</h2><h4 id="学习背景"><a href="#学习背景" class="headerlink" title="学习背景"></a>学习背景</h4><blockquote>
+<p>这段时间在看dubbo接口源代码的时候，看到一个类<strong><em>ExtensionLoader</em></strong>，这个类可以使用类似<code>ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension()</code>的方式获取对应接口<strong><em>Protocol</em></strong>的实现类，在学习了这个类之后，发现其实现理念是基于java的spi(Service Provider Interface)。</p>
+</blockquote>
+<h4 id="spi介绍"><a href="#spi介绍" class="headerlink" title="spi介绍"></a>spi介绍</h4><p>spi其实是一种生产厂家提供给使用者底层扩展的一种机制，而其实现基础的jdk提供的。其实比如有时候一些第三放提供的jar包，在log实现，jdbc驱动选择方面有可能有一个默认的实现，但是更多的是可以让用户去选择。而这些又不方便使用修改代码的方式去jar包中修改，因此，jdk提供了一种基于文件修改选择实现类的方式，其实现的原理也很简单，就是jdk提供的一个工具类———<strong><em>ServiceLoader</em></strong>。</p>
+<h4 id="ServiceLoader类源码分析"><a href="#ServiceLoader类源码分析" class="headerlink" title="ServiceLoader类源码分析"></a>ServiceLoader类源码分析</h4><p><strong><em>ServiceLoader</em></strong>类的入口是两个静态方法</p>
+<pre><code>public static &lt;S&gt; ServiceLoader&lt;S&gt; load(Class&lt;S&gt; service) {
+    ClassLoader cl = Thread.currentThread().getContextClassLoader();
+    return ServiceLoader.load(service, cl);
+}
+
+public static &lt;S&gt; ServiceLoader&lt;S&gt; load(Class&lt;S&gt; service, ClassLoader loader){
+    return new ServiceLoader&lt;&gt;(service, loader);
+}
+</code></pre><p>其实这两个入口最后都指向的是同一个入口<code>public static &lt;S&gt; ServiceLoader&lt;S&gt; load(Class&lt;S&gt; service, ClassLoader loader)</code>,仅仅是一个指定了加载器，一个使用上下文加载器。而这里的<code>Class&lt;S&gt; service</code>其实就是需要加载实现类的接口。再来看下接下来的实现代码</p>
+<pre><code>private ServiceLoader(Class&lt;S&gt; svc, ClassLoader cl) {
+    service = Objects.requireNonNull(svc, &quot;Service interface cannot be null&quot;); //断言需要加载的接口不能为空
+    loader = (cl == null) ? ClassLoader.getSystemClassLoader() : cl; //如果没有穿加载器就使用上下文类加载器
+    acc = (System.getSecurityManager() != null) ? AccessController.getContext() : null;// 校验限制
+    reload(); //重新加载
+}
+
+public void reload() {
+    providers.clear(); //private LinkedHashMap&lt;String,S&gt; providers = new LinkedHashMap&lt;&gt;(); provider就是缓存的借口实现类
+    lookupIterator = new LazyIterator(service, loader); //生成查找递归器
+}
+
+private LazyIterator(Class&lt;S&gt; service, ClassLoader loader) {
+        this.service = service;
+        this.loader = loader;
+}
+</code></pre><p>上述代码其实就已经初始化了类初始化的对象，但其实发现对于实现类的加载以及初始化均未看到。其实实现类的加载关键就是<strong><em>LazyIterator</em></strong>这个对象。从这个对象的名字上其实就可以看出两个意思，分别是lazy和iterator，lazy就说明了这里为什么还没有加载，其实就是用的懒加载，具体使用的时候再进行加载。而懒加载实现的方式其实就是通过iterator递归的时候加载。其实可以想到，一个接口可以提供的实现不一定仅仅只有一种，可能自己定义多种，比如我即可能连接oracle数据库，也可能连接timeTen数据库（一种内存数据库），因此用实现<strong><em>Iterator</em></strong> 接口的方式再好不过。因此<strong><em>ServiceLoader</em></strong>类其实就实现了<code>Iterable&lt;S&gt;</code>接口。再来看下对应的实现方法</p>
+<pre><code>public Iterator&lt;S&gt; iterator() {
+    return new Iterator&lt;S&gt;() {
+
+        Iterator&lt;Map.Entry&lt;String,S&gt;&gt; knownProviders //已经加载的实现方法递归器
+            = providers.entrySet().iterator();
+
+        public boolean hasNext() { //如果已经加载的就有下一个，则返回true，如果没有看看未加载的是否还有
+            if (knownProviders.hasNext())
+                return true;
+            return lookupIterator.hasNext();
+        }
+
+        public S next() { //如果已经加载的就有下一个，则返回已加载的下一个实现，如果没有返回未加载的下一个实现
+            if (knownProviders.hasNext())
+                return knownProviders.next().getValue();
+            return lookupIterator.next();
+        }
+
+        public void remove() { //不支持
+            throw new UnsupportedOperationException();
+        }
+
+    };
+}
+</code></pre><p>看完上述代码，其实就知道了一般一个spi的调用模式。</p>
+<ol>
+<li>使用ServiceLoader sl = ServiceLoader.load(XXX.class);实例化一个ServiceLoader对象</li>
+<li>使用Iterator<xxx> it = sl.iterator();获得sl的迭代器</xxx></li>
+<li>使用for(XXX xxx : it){…} 或者 while(it.hasNext()){XXX xxx = it.next(); …}这样的迭代方式获取一个个实现类然后进行逻辑处理</li>
+</ol>
+<p>知道了调用模式之后我们再来看看<strong><em>lookupIterator</em></strong>的迭代，其实就是真正加载实现类的地方</p>
+<pre><code>// Private inner class implementing fully-lazy provider lookup
+
+private class LazyIterator
+    implements Iterator&lt;S&gt;
+{
+
+    Class&lt;S&gt; service;
+    ClassLoader loader;
+    Enumeration&lt;URL&gt; configs = null;
+    Iterator&lt;String&gt; pending = null;
+    String nextName = null;
+
+    private LazyIterator(Class&lt;S&gt; service, ClassLoader loader) {
+        this.service = service;
+        this.loader = loader;
+    }
+
+    private boolean hasNextService() {
+        if (nextName != null) {
+            return true;
+        }
+        if (configs == null) {
+            try {
+                String fullName = PREFIX + service.getName();// PREFIX = &quot;META-INF/services/&quot;
+                if (loader == null)
+                    configs = ClassLoader.getSystemResources(fullName); // 获取对应接口的配置文件
+                else
+                    configs = loader.getResources(fullName);
+            } catch (IOException x) {
+                fail(service, &quot;Error locating configuration files&quot;, x);
+            }
+        }
+        while ((pending == null) || !pending.hasNext()) {
+            if (!configs.hasMoreElements()) { //如果没有多的配置文件，则返回false
+                return false;
+            }
+            pending = parse(service, configs.nextElement()); // 解析文件，返回实现类迭代器
+        }
+        nextName = pending.next(); // 下个实现类名
+        return true;
+    }
+
+    private S nextService() {
+        if (!hasNextService())
+            throw new NoSuchElementException();
+        String cn = nextName;
+        nextName = null;
+        Class&lt;?&gt; c = null;
+        try {
+            c = Class.forName(cn, false, loader); // 类加载
+        } catch (ClassNotFoundException x) {
+            fail(service,
+                 &quot;Provider &quot; + cn + &quot; not found&quot;);
+        }
+        if (!service.isAssignableFrom(c)) { // 如果未实现xxx接口，则抛出异常
+            fail(service,
+                 &quot;Provider &quot; + cn  + &quot; not a subtype&quot;);
+        }
+        try {
+            S p = service.cast(c.newInstance());// 实例化并且转化为对应接口
+            providers.put(cn, p);// 放入已加载的实现类中
+            return p;// 返回对应实现类
+        } catch (Throwable x) {
+            fail(service,
+                 &quot;Provider &quot; + cn + &quot; could not be instantiated&quot;,
+                 x);
+        }
+        throw new Error();          // This cannot happen
+    }
+
+    public boolean hasNext() {
+        if (acc == null) {
+            return hasNextService();
+        } else {
+            PrivilegedAction&lt;Boolean&gt; action = new PrivilegedAction&lt;Boolean&gt;() {
+                public Boolean run() { return hasNextService(); }
+            };
+            return AccessController.doPrivileged(action, acc);
+        }
+    }
+
+    public S next() {
+        if (acc == null) {
+            return nextService();
+        } else {
+            PrivilegedAction&lt;S&gt; action = new PrivilegedAction&lt;S&gt;() {
+                public S run() { return nextService(); }
+            };
+            return AccessController.doPrivileged(action, acc);
+        }
+    }
+
+    public void remove() {
+        throw new UnsupportedOperationException();
+    }
+
+}
+</code></pre><p>以上就是作为使用者需要配置的地方，在<code>META-INF/services/</code>下配置一个与需要加载的接口同名的文件，文件内容格式可以看文件解析的代码，如下：</p>
+<pre><code>// Parse a single line from the given configuration file, adding the name
+// on the line to the names list.
+//
+private int parseLine(Class&lt;?&gt; service, URL u, BufferedReader r, int lc,
+                      List&lt;String&gt; names)
+    throws IOException, ServiceConfigurationError
+{
+    String ln = r.readLine();
+    if (ln == null) {
+        return -1;
+    }
+    int ci = ln.indexOf(&apos;#&apos;);
+    if (ci &gt;= 0) ln = ln.substring(0, ci); //如果那行存在&apos;#&apos;，则取#前的内容，之后的内容为注释
+    ln = ln.trim(); // 去除空格
+    int n = ln.length();
+    if (n != 0) {
+        if ((ln.indexOf(&apos; &apos;) &gt;= 0) || (ln.indexOf(&apos;\t&apos;) &gt;= 0))// 配置串内部不能出现空格
+            fail(service, u, lc, &quot;Illegal configuration-file syntax&quot;);
+        int cp = ln.codePointAt(0);
+        if (!Character.isJavaIdentifierStart(cp))//接口名称的第一个字母需要符合java命名规范
+            fail(service, u, lc, &quot;Illegal provider-class name: &quot; + ln);
+        for (int i = Character.charCount(cp); i &lt; n; i += Character.charCount(cp)) {
+            cp = ln.codePointAt(i);
+            if (!Character.isJavaIdentifierPart(cp) &amp;&amp; (cp != &apos;.&apos;))
+                fail(service, u, lc, &quot;Illegal provider-class name: &quot; + ln);
+        }
+        if (!providers.containsKey(ln) &amp;&amp; !names.contains(ln))
+            names.add(ln);
+    }
+    return lc + 1;
+}
+
+// Parse the content of the given URL as a provider-configuration file.
+//
+// @param  service
+//         The service type for which providers are being sought;
+//         used to construct error detail strings
+//
+// @param  u
+//         The URL naming the configuration file to be parsed
+//
+// @return A (possibly empty) iterator that will yield the provider-class
+//         names in the given configuration file that are not yet members
+//         of the returned set
+//
+// @throws ServiceConfigurationError
+//         If an I/O error occurs while reading from the given URL, or
+//         if a configuration-file format error is detected
+//
+private Iterator&lt;String&gt; parse(Class&lt;?&gt; service, URL u)
+    throws ServiceConfigurationError
+{
+    InputStream in = null;
+    BufferedReader r = null;
+    ArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();
+    try {
+        in = u.openStream();
+        r = new BufferedReader(new InputStreamReader(in, &quot;utf-8&quot;));
+        int lc = 1;
+        while ((lc = parseLine(service, u, r, lc, names)) &gt;= 0); //解析每行，放到namelist中
+    } catch (IOException x) {
+        fail(service, &quot;Error reading configuration file&quot;, x);
+    } finally {
+        try {
+            if (r != null) r.close();
+            if (in != null) in.close();
+        } catch (IOException y) {
+            fail(service, &quot;Error closing configuration file&quot;, y);
+        }
+    }
+    return names.iterator();
+}
+</code></pre><p>在配置文件中一行就代表配置一个实现类，然后每行只需要记载实现类的类路径，比如说com.learning.spring.App即可，且提供#后的内容作为注释。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>在最刚开始学习jdbc的时候，我们需要创建jdbc连接的时候都需要写一个<code>Class.forName(xxxDriver.class);</code>，然后再调用<code>DriverManager.getConnection()</code>来获取连接，其实看过源码的人就知道，数据库提供的驱动类xxxDriver中都有一段静态代码段，用于向DriverManager注册自身，而<code>Class.forName(xxxDriver.class);</code>就是为了调用这段静态代码段。那么在jdbc4.0之后，jdk就还提供了spi的方式来进行注册对应的驱动，也就是不需要再手动调用<code>Class.forName(xxxDriver.class);</code>了，可以直接使用<code>DriverManager.getConnection()</code>来获取连接。其原理也很简单，其实就在于<strong><em>DriverManager</em></strong>也新增了一段静态代码段。</p>
+<pre><code>/**
+ * Load the initial JDBC drivers by checking the System property
+ * jdbc.properties and then use the {@code ServiceLoader} mechanism
+ */
+static {
+    loadInitialDrivers();
+    println(&quot;JDBC DriverManager initialized&quot;);
+}
+
+ private static void loadInitialDrivers() {
+    String drivers;
+    try {
+        drivers = AccessController.doPrivileged(new PrivilegedAction&lt;String&gt;() { //可以在运行属性中配置
+            public String run() {
+                return System.getProperty(&quot;jdbc.drivers&quot;);
+            }
+        });
+    } catch (Exception ex) {
+        drivers = null;
+    }
+    // If the driver is packaged as a Service Provider, load it.
+    // Get all the drivers through the classloader
+    // exposed as a java.sql.Driver.class service.
+    // ServiceLoader.load() replaces the sun.misc.Providers()
+
+    AccessController.doPrivileged(new PrivilegedAction&lt;Void&gt;() {
+        public Void run() {
+
+            ServiceLoader&lt;Driver&gt; loadedDrivers = ServiceLoader.load(Driver.class); //利用spi加载
+            Iterator&lt;Driver&gt; driversIterator = loadedDrivers.iterator();// 获取迭代器
+
+            /* Load these drivers, so that they can be instantiated.
+             * It may be the case that the driver class may not be there
+             * i.e. there may be a packaged driver with the service class
+             * as implementation of java.sql.Driver but the actual class
+             * may be missing. In that case a java.util.ServiceConfigurationError
+             * will be thrown at runtime by the VM trying to locate
+             * and load the service.
+             *
+             * Adding a try catch block to catch those runtime errors
+             * if driver not available in classpath but it&apos;s
+             * packaged as service and that service is there in classpath.
+             */
+            try{
+                while(driversIterator.hasNext()) {
+                    driversIterator.next(); //向DriverManager注册，功能同Class.forName()
+                }
+            } catch(Throwable t) {
+            // Do nothing
+            }
+            return null;
+        }
+    });
+
+    println(&quot;DriverManager.initialize: jdbc.drivers = &quot; + drivers);
+
+    if (drivers == null || drivers.equals(&quot;&quot;)) {
+        return;
+    }
+    String[] driversList = drivers.split(&quot;:&quot;);
+    println(&quot;number of Drivers:&quot; + driversList.length);
+    for (String aDriver : driversList) {
+        try {
+            println(&quot;DriverManager.Initialize: loading &quot; + aDriver);
+            Class.forName(aDriver, true, //注册运行属性中配置的driver
+                    ClassLoader.getSystemClassLoader());
+        } catch (Exception ex) {
+            println(&quot;DriverManager.Initialize: load failed: &quot; + ex);
+        }
+    }
+}
+</code></pre><p>其实从上面可以看出来，jdbc4.0不仅仅提供了spi方式注册驱动，还提供了运行属性配置的方式来注册驱动。</p>
+<h4 id="模式反思"><a href="#模式反思" class="headerlink" title="模式反思"></a>模式反思</h4><p>看了spi的代码，还是有很大的启发。一个是实现Iterator的方式用来代替在类中定义list去递归list的常规方式。这样的方式不仅可以使用foreach的方式，方便使用者灵活使用，还可以隐藏list内容，仅仅对外提供iterator对应的方法，实现内部包装。另一个就是多学习了一种懒加载的方式，使用iterator迭代的时候再去加载。其实关键就是对Iterator接口的活用让我获益匪浅。jdk提供的spi扩展方式相对来说比较简单，下篇文章将讲解下dubbo接口<strong><em>ExtensionLoader</em></strong>提供的spi加载模式以及它的优点。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/spi/" rel="tag"># spi</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/09/记一次日志jar包混淆问题解决/" rel="next" title="记一次日志jar包混淆问题解决">
+                <i class="fa fa-chevron-left"></i> 记一次日志jar包混淆问题解决
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/10/Load Native Library/" rel="prev" title="Native Library Load">
+                Native Library Load <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Nadleeh" />
+            
+              <p class="site-author-name" itemprop="name">Nadleeh</p>
+              <p class="site-description motion-element" itemprop="description">一名coder的成长笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#spi（Service-Provider-Interface）学习"><span class="nav-number">1.</span> <span class="nav-text">spi（Service Provider Interface）学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#学习背景"><span class="nav-number">1.0.1.</span> <span class="nav-text">学习背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spi介绍"><span class="nav-number">1.0.2.</span> <span class="nav-text">spi介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServiceLoader类源码分析"><span class="nav-number">1.0.3.</span> <span class="nav-text">ServiceLoader类源码分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">1.0.4.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模式反思"><span class="nav-number">1.0.5.</span> <span class="nav-text">模式反思</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Nadleeh</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://nadleeh0314.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/05/01/spi（Service Provider Interface）学习/';
+          this.page.identifier = '2018/05/01/spi（Service Provider Interface）学习/';
+          this.page.title = 'spi（Service Provider Interface）学习';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://nadleeh0314.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
