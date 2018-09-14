@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,jdk source," />
 
 
 
@@ -80,16 +80,17 @@
 
 
 <meta name="description" content="通过ReentrantLock了解AQS学习背景&amp;emsp;&amp;emsp;Queued Synchronizer），包中的大多数内容都是以AQS为基础而形成的。相信大多数想要了解```java.util.concurrent```源码的人都会先去了解AQS，今天就通过lock中的一个例子ReentrantLock来了解下AQS的内容以及其结构。1234567891011121314151617181">
+<meta name="keywords" content="java,jdk source">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nadleeh&#39;s BLOG">
+<meta property="og:title" content="通过ReentrantLock了解AQS">
 <meta property="og:url" content="http://yoursite.com/2018/09/14/通过ReentrantLock了解AQS/index.html">
 <meta property="og:site_name" content="Nadleeh&#39;s BLOG">
 <meta property="og:description" content="通过ReentrantLock了解AQS学习背景&amp;emsp;&amp;emsp;Queued Synchronizer），包中的大多数内容都是以AQS为基础而形成的。相信大多数想要了解```java.util.concurrent```源码的人都会先去了解AQS，今天就通过lock中的一个例子ReentrantLock来了解下AQS的内容以及其结构。1234567891011121314151617181">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/08/07/5b68f2f063b78.png">
-<meta property="og:updated_time" content="2018-09-14T13:05:45.467Z">
+<meta property="og:updated_time" content="2018-09-14T13:11:04.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nadleeh&#39;s BLOG">
+<meta name="twitter:title" content="通过ReentrantLock了解AQS">
 <meta name="twitter:description" content="通过ReentrantLock了解AQS学习背景&amp;emsp;&amp;emsp;Queued Synchronizer），包中的大多数内容都是以AQS为基础而形成的。相信大多数想要了解```java.util.concurrent```源码的人都会先去了解AQS，今天就通过lock中的一个例子ReentrantLock来了解下AQS的内容以及其结构。1234567891011121314151617181">
 <meta name="twitter:image" content="https://i.loli.net/2018/08/07/5b68f2f063b78.png">
 
@@ -127,7 +128,7 @@
 
 
 
-  <title> | Nadleeh's BLOG</title>
+  <title>通过ReentrantLock了解AQS | Nadleeh's BLOG</title>
   
 
 
@@ -281,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">通过ReentrantLock了解AQS</h1>
         
 
         <div class="post-meta">
@@ -293,7 +294,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T21:06:14+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T21:10:38+08:00">
                 2018-09-14
               </time>
             
@@ -303,6 +304,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -782,6 +805,14 @@ final boolean transferForSignal(Node node) {
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/jdk-source/" rel="tag"># jdk source</a>
+          
+        </div>
+      
 
       
       
@@ -912,7 +943,7 @@ final boolean transferForSignal(Node node) {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1117,7 +1148,7 @@ final boolean transferForSignal(Node node) {
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2018/09/14/通过ReentrantLock了解AQS/';
           this.page.identifier = '2018/09/14/通过ReentrantLock了解AQS/';
-          this.page.title = '';
+          this.page.title = '通过ReentrantLock了解AQS';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://nadleeh0314.disqus.com/embed.js';
