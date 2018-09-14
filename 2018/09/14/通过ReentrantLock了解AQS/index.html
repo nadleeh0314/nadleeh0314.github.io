@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="通过ReentrantLock了解AQS学习背景 &amp;emsp;&amp;emsp;java.util.concurrent是jdk1.5新增的一个有关同步的包，包内的Lock、BlockQueue、LockSupport等重要内容都为java并发提供了更多更优的选择，而在java.util.concurrent中，最为核心的内容就是AQS（Abstract Queued Synchronizer），包中的">
+<meta name="description" content="通过ReentrantLock了解AQS学习背景 java.util.concurrent是jdk1.5新增的一个有关同步的包，包内的Lock、BlockQueue、LockSupport等重要内容都为java并发提供了更多更优的选择，而在java.util.concurrent中，最为核心的内容就是AQS（Abstract Queued Synchronizer），包中的大多数内容都是以AQS为">
 <meta name="keywords" content="java,jdk source">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通过ReentrantLock了解AQS">
 <meta property="og:url" content="http://yoursite.com/2018/09/14/通过ReentrantLock了解AQS/index.html">
 <meta property="og:site_name" content="Nadleeh&#39;s BLOG">
-<meta property="og:description" content="通过ReentrantLock了解AQS学习背景 &amp;emsp;&amp;emsp;java.util.concurrent是jdk1.5新增的一个有关同步的包，包内的Lock、BlockQueue、LockSupport等重要内容都为java并发提供了更多更优的选择，而在java.util.concurrent中，最为核心的内容就是AQS（Abstract Queued Synchronizer），包中的">
+<meta property="og:description" content="通过ReentrantLock了解AQS学习背景 java.util.concurrent是jdk1.5新增的一个有关同步的包，包内的Lock、BlockQueue、LockSupport等重要内容都为java并发提供了更多更优的选择，而在java.util.concurrent中，最为核心的内容就是AQS（Abstract Queued Synchronizer），包中的大多数内容都是以AQS为">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/08/07/5b68f2f063b78.png">
-<meta property="og:updated_time" content="2018-09-14T13:24:36.365Z">
+<meta property="og:updated_time" content="2018-09-14T13:26:15.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过ReentrantLock了解AQS">
-<meta name="twitter:description" content="通过ReentrantLock了解AQS学习背景 &amp;emsp;&amp;emsp;java.util.concurrent是jdk1.5新增的一个有关同步的包，包内的Lock、BlockQueue、LockSupport等重要内容都为java并发提供了更多更优的选择，而在java.util.concurrent中，最为核心的内容就是AQS（Abstract Queued Synchronizer），包中的">
+<meta name="twitter:description" content="通过ReentrantLock了解AQS学习背景 java.util.concurrent是jdk1.5新增的一个有关同步的包，包内的Lock、BlockQueue、LockSupport等重要内容都为java并发提供了更多更优的选择，而在java.util.concurrent中，最为核心的内容就是AQS（Abstract Queued Synchronizer），包中的大多数内容都是以AQS为">
 <meta name="twitter:image" content="https://i.loli.net/2018/08/07/5b68f2f063b78.png">
 
 
@@ -366,7 +366,7 @@
 
       
         <h2 id="通过ReentrantLock了解AQS"><a href="#通过ReentrantLock了解AQS" class="headerlink" title="通过ReentrantLock了解AQS"></a>通过ReentrantLock了解AQS</h2><h4 id="学习背景"><a href="#学习背景" class="headerlink" title="学习背景"></a>学习背景</h4><blockquote>
-<p>&emsp;&emsp;<code>java.util.concurrent</code>是jdk1.5新增的一个有关同步的包，包内的Lock、BlockQueue、LockSupport等重要内容都为java并发提供了更多更优的选择，而在<code>java.util.concurrent</code>中，最为核心的内容就是AQS（Abstract Queued Synchronizer），包中的大多数内容都是以AQS为基础而形成的。相信大多数想要了解<code>java.util.concurrent</code>源码的人都会先去了解AQS，今天就通过lock中的一个例子ReentrantLock来了解下AQS的内容以及其结构。</p>
+<p><code>java.util.concurrent</code>是jdk1.5新增的一个有关同步的包，包内的Lock、BlockQueue、LockSupport等重要内容都为java并发提供了更多更优的选择，而在<code>java.util.concurrent</code>中，最为核心的内容就是AQS（Abstract Queued Synchronizer），包中的大多数内容都是以AQS为基础而形成的。相信大多数想要了解<code>java.util.concurrent</code>源码的人都会先去了解AQS，今天就通过lock中的一个例子ReentrantLock来了解下AQS的内容以及其结构。</p>
 </blockquote>
 <a id="more"></a>
 <h4 id="整体了解"><a href="#整体了解" class="headerlink" title="整体了解"></a>整体了解</h4><p>&emsp;&emsp;在真正进行源码了解前先来了解下这个AQS到底是个什么东西。AQS全名是Abstract Queued Synchronizer，可以将这个名称拆解为三部分来了解。</p>
