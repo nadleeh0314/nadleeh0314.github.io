@@ -262,6 +262,262 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/28/vue学习笔记（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nadleeh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nadleeh's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/28/vue学习笔记（一）/" itemprop="url">Vue学习笔记（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-28T21:49:38+08:00">
+                2019-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/28/vue学习笔记（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/10/28/vue学习笔记（一）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Vue学习笔记"><a href="#Vue学习笔记" class="headerlink" title="Vue学习笔记"></a>Vue学习笔记</h2><h4 id="ide选用"><a href="#ide选用" class="headerlink" title="ide选用"></a>ide选用</h4><p>之前就听说过vscode的大名，奈何一直平时工作是java，一直用的是idea，没有领略过vscode的风采，这次想都没想就直接上了vscode，下了安装包就惊了，一共才50多M，这跟idea、eclipse动不动就大几百M的安装包相差甚远。然后就是vscode的使用，感觉有点类似sublime text的风格，其次<a href="https://github.com/microsoft/vscode" target="_blank" rel="noopener">vscode</a>是个开源的ide,这也使它有了良好的社区以及丰富的组建，比如vue就用到了vetur、ESLint，总的来说，vscode真香！！！看看后工作中写java用vscode是否也方便。</p>
+<h4 id="Vue项目创建"><a href="#Vue项目创建" class="headerlink" title="Vue项目创建"></a>Vue项目创建</h4><p>安装内容 ：</p>
+<ul>
+<li>node.js  主要是为了使用后面的npm和webpack，跟vue其实关系不大</li>
+<li>npm    包管理工具，类似java中的maven</li>
+<li>webpack    打包工具，类似maven中的打包以及包管理</li>
+<li>vue    可以不用安装，直接引用也可以</li>
+<li></li>
+</ul>
+<h4 id="Vue中的常用指令"><a href="#Vue中的常用指令" class="headerlink" title="Vue中的常用指令"></a>Vue中的常用指令</h4><h5 id="动态绑定-v-bind"><a href="#动态绑定-v-bind" class="headerlink" title="动态绑定 v-bind"></a><a href="https://jsfiddle.net/xLefwr58/" target="_blank" rel="noopener">动态绑定 v-bind</a></h5><pre><code>&lt;div id=&quot;app-2&quot;&gt;
+  &lt;span v-bind:title=&quot;message&quot;&gt;
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  &lt;/span&gt;
+&lt;/div&gt;
+
+var app2 = new Vue({
+  el: &apos;#app-2&apos;,
+  data: {
+    message: &apos;页面加载于 &apos; + new Date().toLocaleString()
+  }
+})
+</code></pre><h5 id="条件-v-if"><a href="#条件-v-if" class="headerlink" title="条件 v-if"></a><a href="https://jsfiddle.net/3g4Lr9jn/" target="_blank" rel="noopener">条件 v-if</a></h5><pre><code>&lt;div id=&quot;app-3&quot;&gt;
+      &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;
+&lt;/div&gt;    
+
+var app3 = new Vue({
+  el: &apos;#app-3&apos;,
+  data: {
+    seen: true
+  }
+})
+</code></pre><h5 id="循环-v-for"><a href="#循环-v-for" class="headerlink" title="循环 v-for"></a><a href="https://jsfiddle.net/7w0gLcde/" target="_blank" rel="noopener">循环 v-for</a></h5><p>类似于java中的foreach，使用 </p>
+<pre><code>app4.todos.push{{text : 'pushtest'}}
+</code></pre><p>还可以动态插入数据</p>
+<pre><code>&lt;div id=&quot;app-4&quot;&gt;
+  &lt;ol&gt;
+    &lt;li v-for=&quot;todo in todos&quot;&gt;
+      `{{ todo.text }}`
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+var app4 = new Vue({
+  el: &apos;#app-4&apos;,
+  data: {
+    todos: [
+      { text: &apos;学习 JavaScript&apos; },
+      { text: &apos;学习 Vue&apos; },
+      { text: &apos;整个牛项目&apos; }
+    ]
+  }
+})
+</code></pre><h5 id="用户输入处理-v-on"><a href="#用户输入处理-v-on" class="headerlink" title="用户输入处理 v-on"></a><a href="https://jsfiddle.net/3ve05tsu/" target="_blank" rel="noopener">用户输入处理 v-on</a></h5><pre><code>&lt;div id=&quot;app-5&quot;&gt;
+      &lt;p&gt;{{ message }}&lt;/p&gt;
+      &lt;button v-on:click=&quot;reverseMessage&quot;&gt;反转消息&lt;/button&gt;
+&lt;/div&gt;
+
+var app5 = new Vue({
+  el: &apos;#app-5&apos;,
+  data: {
+    message: &apos;Hello Vue.js!&apos;
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)
+    }
+  }
+})
+</code></pre><h5 id="输入展示双向绑定-v-model"><a href="#输入展示双向绑定-v-model" class="headerlink" title="输入展示双向绑定 v-model"></a><a href="https://jsfiddle.net/n3c8gpmu/" target="_blank" rel="noopener">输入展示双向绑定 v-model</a></h5><pre><code>div id=&quot;app-6&quot;&gt;
+      &lt;p&gt;`{{ message }}`&lt;/p&gt;
+      &lt;input v-model=&quot;message&quot;&gt;
+&lt;/div&gt;
+
+var app6 = new Vue({
+  el: &apos;#app-6&apos;,
+  data: {
+    message: &apos;Hello Vue!&apos;
+  }
+})
+</code></pre><h5 id="自定义组件-Vue-component"><a href="#自定义组件-Vue-component" class="headerlink" title="自定义组件 Vue.component"></a><a href="https://jsfiddle.net/wnvmk8e9/" target="_blank" rel="noopener">自定义组件 Vue.component</a></h5><pre><code>&lt;div id=&quot;app-7&quot;&gt;
+  &lt;ol&gt;
+    &lt;todo-item
+      v-for=&quot;item in groceryList&quot;
+      v-bind:todo=&quot;item&quot;
+      v-bind:key=&quot;item.id&quot;
+    &gt;&lt;/todo-item&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+Vue.component(&apos;todo-item&apos;, {
+  props: [&apos;todo&apos;],
+  template: &apos;&lt;li&gt;`{{ todo.text }}`&lt;/li&gt;&apos;
+})
+
+var app7 = new Vue({
+  el: &apos;#app-7&apos;,
+  data: {
+    groceryList: [
+      { id: 0, text: &apos;蔬菜&apos; },
+      { id: 1, text: &apos;奶酪&apos; },
+      { id: 2, text: &apos;随便其它什么人吃的东西&apos; }
+    ]
+  }
+})
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/Maven学习笔记（一）：生命周期及插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1261,7 +1517,7 @@ log4j:WARN Please initialize the log4j system properly.
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1283,7 +1539,7 @@ log4j:WARN Please initialize the log4j system properly.
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
